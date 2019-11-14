@@ -1,6 +1,6 @@
 module.exports = function(app, Test) {
   app.get('/', function(req, res) {
-    res.send('START')
+    res.send('SSAFY 2-2 Test API Server')
   })
 
   app.get('/test', function(req, res) {
