@@ -11,7 +11,7 @@ db.once('open', function() {
   console.log('connected')
 })
 
-mongoose.connect('mongodb://<dbuser>:<dbpassword>@ds061601.mlab.com:61601/heroku_m63tz4jn', {
+mongoose.connect('mongodb://young:sky7732@ds061601.mlab.com:61601/heroku_m63tz4jn', {
   useCreateIndex: true,
   useNewUrlParser: true,
   useUnifiedTopology: true,

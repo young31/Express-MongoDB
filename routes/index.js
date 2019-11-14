@@ -1,4 +1,8 @@
 module.exports = function(app, Test) {
+  app.get('/', function(req, res) {
+    res.send('START')
+  })
+
   app.get('/test', function(req, res) {
     Test.find(function(err, tests) {
       if (err) { return res.status(500).send({ error: 'fail' }) }
