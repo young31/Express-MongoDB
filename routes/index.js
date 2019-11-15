@@ -14,7 +14,6 @@ module.exports = function(app, Test) {
     let test = new Test()
     test.name = req.query.name
     test.hobby = req.query.hobby
-    console.log(req.params)
 
     test.save(function(err) {
       if (err) {
