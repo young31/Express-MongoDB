@@ -1,4 +1,5 @@
 module.exports = function(app, Test) {
+  // get
   app.get('/', function(req, res) {
     res.send('SSAFY 2-2 Test API Server')
   })
@@ -10,6 +11,7 @@ module.exports = function(app, Test) {
     })
   })
 
+  // post
   app.post('/test', function(req, res) {
     let test = new Test()
     test.name = req.query.name
@@ -25,6 +27,7 @@ module.exports = function(app, Test) {
     })
   })
 
+  // put
   app.put('/test/:test_name', function(req, res) {
     Test.updateOne({ name: req.params.test_name }, { $set: req.query }, function(err, output) {
       if (err) { res.status(500).json({ err: 'connect failed' }) }
@@ -33,6 +36,7 @@ module.exports = function(app, Test) {
     })
   })
 
+  // delete
   app.delete('/test/:test_name', function(req, res) {
     Test.remove({ name: req.params.test_name }, function(err, output) {
       if (err) return res.status(500).json({ error: 'connect failed' })
