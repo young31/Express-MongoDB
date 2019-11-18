@@ -7,7 +7,7 @@ const db = mongoose.connection
 
 // config
 const dotenv = require('dotenv').config()
-const GLOBAL_URI = dotenv.parsed.GLOBAL_URI
+const GLOBAL_URI = process.config.MONGODB_URI
   // const LOCAL_URI = dotenv.parsed.LOCAL_URI
 
 // when connected
