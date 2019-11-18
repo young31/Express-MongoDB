@@ -8,7 +8,7 @@ const db = mongoose.connection
 // config
 const dotenv = require('dotenv').config()
 const GLOBAL_URI = dotenv.parsed.GLOBAL_URI
-const LOCAL_URI = dotenv.parsed.LOCAL_URI
+  // const LOCAL_URI = dotenv.parsed.LOCAL_URI
 
 // when connected
 db.on('error', function() {
@@ -18,7 +18,7 @@ db.once('open', function() {
   console.log('connected')
 })
 
-mongoose.connect(LOCAL_URI, {
+mongoose.connect(GLOBAL_URI, {
   useCreateIndex: true,
   useNewUrlParser: true,
   useUnifiedTopology: true,
