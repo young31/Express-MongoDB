@@ -14,8 +14,9 @@ module.exports = function(app, Test) {
   // post
   app.post('/test', function(req, res) {
     let test = new Test()
-    test.name = req.query.name
-    test.hobby = req.query.hobby
+    console.log(req.body)
+    test.name = req.body.name
+    test.hobby = req.body.hobby
 
     test.save(function(err) {
       if (err) {

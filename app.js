@@ -5,6 +5,11 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const db = mongoose.connection
 
+// config
+const dotenv = require('dotenv').config()
+const GLOBAL_URI = dotenv.parsed.GLOBAL_URI
+const LOCAL_URI = dotenv.parsed.LOCAL_URI
+
 // when connected
 db.on('error', function() {
   console.error('error')
@@ -14,9 +19,9 @@ db.once('open', function() {
 })
 
 // connect db
-const MONGO_URI = 'mongodb://young:sky7732@ds061601.mlab.com:61601/heroku_m63tz4jn'
-  // mongodb://localhost/mongodb_tutorial
-mongoose.connect(MONGO_URI, {
+// const MONGO_URI = 'mongodb://young:sky7732@ds061601.mlab.com:61601/heroku_m63tz4jn'
+// const MONGO_URI = 'mongodb://localhost/mongodb_tutorial'
+mongoose.connect(LOCAL_URI, {
   useCreateIndex: true,
   useNewUrlParser: true,
   useUnifiedTopology: true,
