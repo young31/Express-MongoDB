@@ -18,9 +18,6 @@ db.once('open', function() {
   console.log('connected')
 })
 
-// connect db
-// const MONGO_URI = 'mongodb://young:sky7732@ds061601.mlab.com:61601/heroku_m63tz4jn'
-// const MONGO_URI = 'mongodb://localhost/mongodb_tutorial'
 mongoose.connect(LOCAL_URI, {
   useCreateIndex: true,
   useNewUrlParser: true,
