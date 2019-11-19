@@ -40,11 +40,11 @@ const port = process.env.PORT || 5000
 const home = require('./routes/index')
 app.use('/', home)
 
-// const test = require('./routes/test')
-// app.use('/test', test)
+const test = require('./routes/test')
+app.use('/test', test)
 
-// const simpleFin = require('./routes/simplefin')
-// app.use('/simpleifn', simpleFin)
+const simpleFin = require('./routes/simplefin')
+app.use('/simpleifn', simpleFin)
 
 // confirm connection
 const server = app.listen(port, () => console.log('server listen', port))
