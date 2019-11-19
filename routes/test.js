@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const Test = require('../models/test')
 
 app.route('/test')
   .get('/test', function(req, res) {
