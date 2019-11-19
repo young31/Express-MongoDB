@@ -41,7 +41,7 @@ const home = require('./routes/index')
 app.use('/', home)
 
 const test = require('./routes/test')
-const Test = require('./models/test')
+  // const Test = require('./models/test')
 app.use(test)(Test)
 
 const simpleFin = require('./routes/simplefin')
