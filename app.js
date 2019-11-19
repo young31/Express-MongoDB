@@ -6,7 +6,7 @@ const mongoose = require('mongoose')
 const db = mongoose.connection
 
 // config
-const dotenv = require('dotenv').config()
+// const dotenv = require('dotenv').config()
 const GLOBAL_URI = process.env.MONGODB_URI
   // const LOCAL_URI = dotenv.parsed.LOCAL_URI
 
@@ -34,9 +34,10 @@ const port = process.env.PORT || 5000
 
 // model setting
 const Test = require('./models/test')
+const SimpleFin = require('./models/simplefin')
 
 // router setting
-const router = require('./routes')(app, Test)
+const router = require('./routes')
 
 // confirm connection
 const server = app.listen(port, () => console.log('server listen', port))

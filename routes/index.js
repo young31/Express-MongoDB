@@ -1,9 +1,17 @@
 module.exports = function(app, Test) {
-  // get
+  // main
   app.get('/', function(req, res) {
-    res.send('SSAFY 2-2 Test API Server')
+    res.send('신한 해커톤 DB Server')
   })
 
+  app.get('/simplefin', function(req, res) {
+    SimpleFin.find(function(err, info) {
+      if (err) { return res.status(500).send({ error: fail }) }
+      res.json(info)
+    })
+  })
+
+  // test
   app.get('/test', function(req, res) {
     Test.find(function(err, tests) {
       if (err) { return res.status(500).send({ error: 'fail' }) }
