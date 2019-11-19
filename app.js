@@ -33,19 +33,18 @@ app.use(bodyParser.json())
 const port = process.env.PORT || 5000
 
 // model setting
-const Test = require('./models/test')
-const SimpleFin = require('./models/simplefin')
+// const Test = require('./models/test')
+// const SimpleFin = require('./models/simplefin')
 
 // router setting
 const home = require('./routes/index')
 app.use('/', home)
 
-const test = require('./routes/test')
-  // const Test = require('./models/test')
-app.use('/test', test)
+// const test = require('./routes/test')
+// app.use('/test', test)
 
-const simpleFin = require('./routes/simplefin')
-app.use('/simpleifn', simpleFin)
+// const simpleFin = require('./routes/simplefin')
+// app.use('/simpleifn', simpleFin)
 
 // confirm connection
 const server = app.listen(port, () => console.log('server listen', port))
