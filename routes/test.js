@@ -1,8 +1,8 @@
 const express = require('express')
-const app = express()
-let Test = require('../models/test')
+const router = express.Router()
+const Test = require('../models/test')
 
-app.route('/test')
+router
   .get('/test', function(req, res) {
     Test.find(function(err, tests) {
       if (err) { return res.status(500).send({ error: 'fail' }) }
@@ -40,4 +40,4 @@ app.route('/test')
   })
 })
 
-module.exports = app
+module.exports = router
