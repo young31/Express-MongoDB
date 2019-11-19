@@ -37,7 +37,14 @@ const Test = require('./models/test')
 const SimpleFin = require('./models/simplefin')
 
 // router setting
-const router = require('./routes')(app, Test, SimpleFin)
+const home = require('./routes/index')
+app.use('/', home)
+
+const test = require('./routes/test')
+app.use('/test', test)
+
+const simpleFin = require('./routes/simplefin')
+app.use('/simpleifn', simpleFin)
 
 // confirm connection
 const server = app.listen(port, () => console.log('server listen', port))
