@@ -3,6 +3,8 @@ const router = express.Router()
 const Test = require('../models/test')
 
 router.get('/test', function(req, res) {
+  console.log(req)
+  console.log(Test)
   Test.find(function(err, tests) {
     if (err) { return res.status(500).send({ error: 'fail' }) }
     res.json(tests)
