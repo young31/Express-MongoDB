@@ -10,21 +10,10 @@ router.get('/', function(req, res) {
 })
 
 router.post('/', function(req, res) {
-  console.log(req.body)
-  let fin = new SimpleFin()
-  fin = req.doby
-  fin.save()
-    // fin.name = req.body.name
-    // fin.hobby = req.body.hobby
-
-  fin.save(function(err) {
-    if (err) {
-      res.status(400).json({ result: 'error' })
-      return
-    }
-
-    res.status(200).json({ result: 1 })
-  })
+  // console.log(req.body)
+  SimpleFin.create(req.body)
+    .then(res.status(200).json({ result: 1 }))
+    .catch(res.status(400).json({ result: 'error' }))
 })
 
 module.exports = router
