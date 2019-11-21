@@ -10,6 +10,7 @@ router.get('/', function(req, res) {
 })
 
 router.post('/', function(req, res) {
+  console.log(req.body)
   let test = new Test()
   test.name = req.body.name
   test.hobby = req.body.hobby
