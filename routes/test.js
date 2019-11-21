@@ -11,8 +11,8 @@ router.get('/', function(req, res) {
 
 router.post('/', function(req, res) {
   let test = new Test()
-  test.name = req.query.name
-  test.hobby = req.query.hobby
+  test.name = req.body.name
+  test.hobby = req.body.hobby
 
   test.save(function(err) {
     if (err) {
