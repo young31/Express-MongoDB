@@ -6,9 +6,9 @@ const mongoose = require('mongoose')
 const db = mongoose.connection
 
 // config
-const dotenv = require('dotenv').config()
-const LOCAL_URI = dotenv.parsed.LOCAL_URI
-  // const GLOBAL_URI = process.env.MONGODB_URI
+// const dotenv = require('dotenv').config()
+// const LOCAL_URI = dotenv.parsed.LOCAL_URI
+const GLOBAL_URI = process.env.MONGODB_URI
 
 
 // when connected
@@ -19,7 +19,7 @@ db.once('open', function() {
   console.log('connected')
 })
 
-mongoose.connect(LOCAL_URI, {
+mongoose.connect(GLOBAL_URI, {
   useCreateIndex: true,
   useNewUrlParser: true,
   useUnifiedTopology: true,
