@@ -3,10 +3,8 @@ const router = express.Router()
 const SimpleFin = require('../models/simplefin')
 
 router.get('/', function(req, res) {
-  SimpleFin.find(function(err, info) {
-    if (err) { return res.status(500).send({ error: fail }) }
-    res.json(info)
-  })
+  const data = SimpleFin.find({})
+  res.send(data)
 })
 
 router.post('/', function(req, res) {
