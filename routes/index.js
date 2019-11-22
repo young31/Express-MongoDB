@@ -8,11 +8,12 @@ router.get('/', function(req, res) {
 })
 
 router.post('/', function(req, res) {
+
     const targeturl = req.body.urls
     const options = req.body.options
 
     function aa() {
-      return axios.post('http://10.3.17.61:8080/v1/account/list', options).then(response => {
+      return axios.post('127.0.0.1:5000', options).then(response => {
         return response.data
       })
     }
