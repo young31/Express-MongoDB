@@ -19,6 +19,7 @@ db.once('open', function() {
   console.log('connected')
 })
 
+console.log(GLOBAL_URI)
 mongoose.connect(GLOBAL_URI, {
   useCreateIndex: true,
   useNewUrlParser: true,
